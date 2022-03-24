@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [14.x, 17.x]
 
     steps:
       - uses: actions/checkout@v2 
@@ -18,7 +18,10 @@ jobs:
       
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: make install
-      - run: make lint
+    - name: npm install
+          run: make install
+          env:
+        CI: true
+ - name: Run liner
+      run: make lint
       
