@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import { name, greetByUsername } from '../src/cli.js';
-import generatorRandom from '../src/RandomNumberGenerator.js';
+import generatorRandom from '../src/index.js';
 
 greetByUsername();
 console.log('Answer "yes" if the number is even, otherwise answer "no"');
