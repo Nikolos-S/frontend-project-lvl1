@@ -26,8 +26,8 @@ const resultsСomparer = () => {
       }
       return result;
     };
-    const rightAnswer = calculator(operator).toString();
-    if (rightAnswer === answer) {
+    const rightAnswer = calculator(operator);
+    if (rightAnswer === Number(answer)) {
       console.log('Correct!');
     } else {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${rightAnswer}`);
