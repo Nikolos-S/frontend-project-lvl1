@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import userResponse from '../src/random.js';
+import userResponse from '../games/EvenNumberGame.js';
 
 userResponse();
