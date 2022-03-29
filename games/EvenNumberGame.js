@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import { name, greetByUsername } from '../src/cli.js';
-import generatorRandom from '../src/index.js';
+import { generatorRandom, testCheck } from '../src/index.js';
 
 greetByUsername();
 console.log('Answer "yes" if the number is even, otherwise answer "no"');
@@ -15,14 +15,11 @@ const userResponse = () => {
     } else {
       rightAnswer = 'no';
     }
-    if (rightAnswer === answer) {
-      console.log('Correct!');
-    } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was 'yes'`);
-      console.log(`Let's try again, ${name}!`);
+    const isGameOver = testCheck(rightAnswer, answer);
+    if (isGameOver === false) {
       return;
     }
-    console.log(`Congratulations, ${name}`);
   }
+  console.log(`Congratulations, ${name}!`);
 };
 export default userResponse;
