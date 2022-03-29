@@ -9,7 +9,8 @@ const resultsСomparer = () => {
     const num1 = generatorRandom(0, 11); // первое число
     const num2 = generatorRandom(0, 11); // второе число
     const randomOperator = ['+', '-', '*']; // массив с рандомными операторами
-    const operator = randomOperator[generatorRandom(0, 3)]; // рандомный оператор
+    const index = generatorRandom(0, 3);
+    const operator = randomOperator[index]; // рандомный оператор
     console.log(`Question: ${num1} ${operator} ${num2}`);
     const answer = Number(readlineSync.question('Your answer: '));
     const calculator = (op) => {
