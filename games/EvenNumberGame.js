@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
-import { name, greetByUsername } from '../src/cli.js';
-import { generatorRandom, testCheck } from '../src/index.js';
+import { greetByUsername } from '../src/cli.js';
+import { generatorRandom, testCheck, congrats } from '../src/index.js';
 
 greetByUsername();
 console.log('Answer "yes" if the number is even, otherwise answer "no"');
@@ -20,6 +20,6 @@ const userResponse = () => {
       return;
     }
   }
-  console.log(`Congratulations, ${name}!`);
+  congrats();
 };
 export default userResponse;

@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
-import { name, greetByUsername } from '../src/cli.js';
-import { generatorRandom, testCheck } from '../src/index.js';
+import { greetByUsername } from '../src/cli.js';
+import { generatorRandom, testCheck, congrats } from '../src/index.js';
 
 greetByUsername();
 console.log('What is the result of the expression?');
@@ -32,6 +32,6 @@ const resultsСomparer = () => {
       return;
     }
   }
-  console.log(`Congratulations, ${name}!`);
+  congrats();
 };
 export default resultsСomparer;

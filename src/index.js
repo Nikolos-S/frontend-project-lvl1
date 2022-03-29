@@ -10,3 +10,4 @@ export const testCheck = (rightAnswer, answer) => {
   console.log(`Let's try again, ${name}!`);
   return false;
 };
+export const congrats = () => console.log(`Congratulations, ${name}!`);
