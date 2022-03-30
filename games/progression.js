@@ -13,7 +13,7 @@ const findTheMissing = () => {
       arr.push(i);
     }
     const index = generatorRandom(0, 10);
-    arr[index] = '...';
+    arr[index] = '..';
     console.log(`Question: ${arr}`);
     const answer = Number(readlineSync.question('Your answer: '));
     const rightAnswer = startNumber + step * index;
