@@ -14,7 +14,7 @@ const findTheMissing = () => {
     }
     const index = generatorRandom(0, 10);
     arr[index] = '..';
-    console.log(`Question: ${arr}`);
+    console.log(`Question: ${arr.join(' ')}`);
     const answer = Number(readlineSync.question('Your answer: '));
     const rightAnswer = startNumber + step * index;
     const isGameOver = testCheck(rightAnswer, answer);
