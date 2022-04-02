@@ -3,7 +3,7 @@ import brainGame from '../index.js';
 
 const task = 'What is the result of the expression?';
 
-const calculator = () => {
+const findResultOperation = () => {
   const num1 = generatorRandom(0, 11);
   const num2 = generatorRandom(0, 11);
   const randomOperator = ['+', '-', '*'];
@@ -22,5 +22,5 @@ const calculator = () => {
   }
   return [question, String(result)];
 };
-const startCalcGame = () => brainGame(calculator, task);
+const startCalcGame = () => brainGame(findResultOperation, task);
 export default startCalcGame;

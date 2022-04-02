@@ -2,7 +2,7 @@ import brainGame from '../index.js';
 import generatorRandom from '../randomNumber.js';
 
 const task = 'What number is missing in the progression?';
-const progression = () => {
+const findMissingNumber = () => {
   const arr = [];
   const step = generatorRandom(1, 8);
   const startNumber = generatorRandom(1, 50);
@@ -15,5 +15,5 @@ const progression = () => {
   const result = startNumber + step * index;
   return [question, String(result)];
 };
-const startProgressionGame = () => brainGame(progression, task);
+const startProgressionGame = () => brainGame(findMissingNumber, task);
 export default startProgressionGame;
