@@ -5,19 +5,19 @@ const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const getPrime = (number) => {
   if (number < 2) {
-    return false;
+    return 'no';
   }
   for (let del = 2; del < number; del += 1) {
     if (number % del === 0) {
-      return false;
+      return 'no';
     }
   }
-  return true;
+  return 'yes';
 };
 const findPrimeNumber = () => {
   const randomNumber = generatorRandom(1, 12);
   const question = randomNumber;
-  const rightAnswer = getPrime(randomNumber) ? 'yes' : 'no';
+  const rightAnswer = getPrime(randomNumber);
   return [question, rightAnswer];
 };
 const startPrimeGame = () => engineGame(findPrimeNumber, task);
