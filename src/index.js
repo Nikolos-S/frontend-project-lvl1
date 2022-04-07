@@ -6,15 +6,13 @@ const brainGame = (game, task) => {
   console.log(`Hello, ${name}!`);
   console.log(task);
   for (let round = 0; round < 3; round += 1) {
-    const resultGame = game();
-    const question = resultGame[0];
-    const rightAnswer = resultGame[1];
+    const [question, result] = game();
     console.log(`Question: ${question}`);
     const answer = (readlineSync.question('Your answer: '));
-    if (rightAnswer === answer) {
+    if (result === answer) {
       console.log('Correct!');
     } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${rightAnswer}.`);
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${result}.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
