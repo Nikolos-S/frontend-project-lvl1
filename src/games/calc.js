@@ -7,7 +7,7 @@ const findResultOperation = () => {
   const num1 = generatorRandom(0, 11);
   const num2 = generatorRandom(0, 11);
   const randomOperator = ['+', '-', '*'];
-  const operator = randomOperator[generatorRandom(0, 3)];
+  const operator = randomOperator[generatorRandom(0, (randomOperator.length))];
   const question = `${num1} ${operator} ${num2}`;
   let result;
   switch (operator) {
