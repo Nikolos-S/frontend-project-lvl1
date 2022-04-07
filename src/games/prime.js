@@ -2,19 +2,23 @@ import engineGame from '../index.js';
 import generatorRandom from '../randomNumber.js';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const getPrime = (number) => {
+  if (number < 2) {
+    return false;
+  }
+  for (let del = 2; del < number; del += 1) {
+    if (number % del === 0) {
+      return false;
+    }
+  }
+  return true;
+};
 const findPrimeNumber = () => {
   const randomNumber = generatorRandom(1, 12);
   const question = randomNumber;
-  let result = 'yes';
-  if (randomNumber < 2) {
-    result = 'no';
-  }
-  for (let del = 2; del < randomNumber; del += 1) {
-    if (randomNumber % del === 0) {
-      result = 'no';
-    }
-  }
-  return [question, result];
+  const rightAnswer = getPrime(randomNumber) ? 'yes' : 'no';
+  return [question, rightAnswer];
 };
 const startPrimeGame = () => engineGame(findPrimeNumber, task);
 export default startPrimeGame;

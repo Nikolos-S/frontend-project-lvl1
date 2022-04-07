@@ -2,18 +2,26 @@ import engineGame from '../index.js';
 import generatorRandom from '../randomNumber.js';
 
 const task = 'What number is missing in the progression?';
-const findMissingNumber = () => {
-  const arr = [];
-  const step = generatorRandom(1, 8);
-  const startNumber = generatorRandom(1, 50);
-  for (let i = startNumber; i < (startNumber + step * 10); i += step) {
-    arr.push(i);
+
+const getNumber = (startNumber, step, hidden) => {
+  const result = [];
+  for (let i = 0; i < 10; i += 1) {
+    if (i !== hidden) {
+      result.push(startNumber + step * i);
+    } else {
+      result.push('..');
+    }
   }
-  const index = generatorRandom(0, 10);
-  arr[index] = '..';
-  const question = `${arr.join(' ')}`;
-  const result = startNumber + step * index;
-  return [question, String(result)];
+  return result;
+};
+const findMissingNumber = () => {
+  const hiddenElement = generatorRandom(0, 10);
+  const stepProgression = generatorRandom(1, 8);
+  const firstNumber = generatorRandom(1, 50);
+  const progression = getNumber(firstNumber, stepProgression, hiddenElement);
+  const question = progression.join(' ');
+  const rightAnswer = firstNumber + stepProgression * hiddenElement;
+  return [question, String(rightAnswer)];
 };
 const startProgressionGame = () => engineGame(findMissingNumber, task);
 export default startProgressionGame;

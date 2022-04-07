@@ -9,13 +9,12 @@ const engineGame = (game, task) => {
     const [question, result] = game();
     console.log(`Question: ${question}`);
     const answer = (readlineSync.question('Your answer: '));
-    if (result === answer) {
-      console.log('Correct!');
-    } else {
+    if (result !== answer) {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${result}.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${name}!`);
 };
