@@ -1,4 +1,4 @@
-import brainGame from '../index.js';
+import engineGame from '../index.js';
 import generatorRandom from '../randomNumber.js';
 
 const task = 'Find the greatest common divisor of given numbers.';
@@ -18,5 +18,5 @@ const findLagrestDiv = () => {
   }
   return [question, String(result)];
 };
-const startGcdGame = () => brainGame(findLagrestDiv, task);
+const startGcdGame = () => engineGame(findLagrestDiv, task);
 export default startGcdGame;

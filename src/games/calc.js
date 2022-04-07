@@ -1,5 +1,5 @@
 import generatorRandom from '../randomNumber.js';
-import brainGame from '../index.js';
+import engineGame from '../index.js';
 
 const task = 'What is the result of the expression?';
 
@@ -22,5 +22,5 @@ const findResultOperation = () => {
   }
   return [question, String(result)];
 };
-const startCalcGame = () => brainGame(findResultOperation, task);
+const startCalcGame = () => engineGame(findResultOperation, task);
 export default startCalcGame;

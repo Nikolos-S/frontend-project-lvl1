@@ -1,4 +1,4 @@
-import brainGame from '../index.js';
+import engineGame from '../index.js';
 import generatorRandom from '../randomNumber.js';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -16,5 +16,5 @@ const findPrimeNumber = () => {
   }
   return [question, result];
 };
-const startPrimeGame = () => brainGame(findPrimeNumber, task);
+const startPrimeGame = () => engineGame(findPrimeNumber, task);
 export default startPrimeGame;

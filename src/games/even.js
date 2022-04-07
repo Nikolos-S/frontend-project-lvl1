@@ -1,4 +1,4 @@
-import brainGame from '../index.js';
+import engineGame from '../index.js';
 import generatorRandom from '../randomNumber.js';
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no"';
@@ -11,6 +11,6 @@ const findEvenNumber = () => {
   }
   return [question, result];
 };
-const startEvenGame = () => brainGame(findEvenNumber, task);
+const startEvenGame = () => engineGame(findEvenNumber, task);
 
 export default startEvenGame;
