@@ -10,8 +10,7 @@ const engineGame = (game, task) => {
     console.log(`Question: ${question}`);
     const answer = (readlineSync.question('Your answer: '));
     if (result !== answer) {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${result}.`);
-      console.log(`Let's try again, ${name}!`);
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${result}.\nLet's try again, ${name}!`);
       return;
     }
     console.log('Correct!');
