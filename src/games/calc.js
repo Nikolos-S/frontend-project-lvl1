@@ -5,17 +5,16 @@ const task = 'What is the result of the expression?';
 const randomOperator = ['+', '-', '*'];
 
 const getResult = (number1, number2, operator) => {
-  let result;
   switch (operator) {
-    case '+': result = number1 + number2;
-      break;
-    case '-': result = number1 - number2;
-      break;
-    case '*': result = number1 * number2;
-      break;
+    case '+':
+      return number1 + number2;
+    case '-':
+      return number1 - number2;
+    case '*':
+      return number1 * number2;
     default:
+      return null;
   }
-  return result;
 };
 
 const findResultOperation = () => {
