@@ -1,11 +1,11 @@
-import engineGame from '../index.js';
-import generatorRandom from '../randomNumber.js';
+import gameEngine from '../index.js';
+import generateRandomNumber from '../randomNumber.js';
 
-const task = 'What number is missing in the progression?';
+const gameTask = 'What number is missing in the progression?';
 
-const getNumber = (startNumber, step, hidden) => {
+const generateProgression = (startNumber, step, hidden, lenghtProgression) => {
   const result = [];
-  for (let i = 0; i < 10; i += 1) {
+  for (let i = 0; i < lenghtProgression; i += 1) {
     if (i !== hidden) {
       result.push(startNumber + step * i);
     } else {
@@ -15,13 +15,14 @@ const getNumber = (startNumber, step, hidden) => {
   return result;
 };
 const findMissingNumber = () => {
-  const hiddenElement = generatorRandom(0, 10);
-  const stepProgression = generatorRandom(1, 8);
-  const firstNumber = generatorRandom(1, 50);
-  const progression = getNumber(firstNumber, stepProgression, hiddenElement);
+  const lenght = generateRandomNumber(5, 11);
+  const hiddenElement = generateRandomNumber(5, lenght - 1);
+  const stepProgression = generateRandomNumber(1, 8);
+  const firstNumber = generateRandomNumber(1, 50);
+  const progression = generateProgression(firstNumber, stepProgression, hiddenElement, lenght);
   const question = progression.join(' ');
-  const rightAnswer = firstNumber + stepProgression * hiddenElement;
-  return [question, String(rightAnswer)];
+  const correctAnswer = firstNumber + stepProgression * hiddenElement;
+  return [question, String(correctAnswer)];
 };
-const startProgressionGame = () => engineGame(findMissingNumber, task);
+const startProgressionGame = () => gameEngine(findMissingNumber, gameTask);
 export default startProgressionGame;

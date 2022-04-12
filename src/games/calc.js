@@ -1,10 +1,10 @@
-import generatorRandom from '../randomNumber.js';
-import engineGame from '../index.js';
+import generateRandomNumber from '../randomNumber.js';
+import gameEngine from '../index.js';
 
-const task = 'What is the result of the expression?';
-const randomOperator = ['+', '-', '*'];
+const gameTask = 'What is the result of the expression?';
+const operands = ['+', '-', '*'];
 
-const getResult = (number1, number2, operator) => {
+const calculateExpression = (number1, number2, operator) => {
   switch (operator) {
     case '+':
       return number1 + number2;
@@ -18,12 +18,12 @@ const getResult = (number1, number2, operator) => {
 };
 
 const findResultOperation = () => {
-  const num1 = generatorRandom(0, 11);
-  const num2 = generatorRandom(0, 11);
-  const operatorRandom = randomOperator[generatorRandom(0, (randomOperator.length))];
-  const question = `${num1} ${operatorRandom} ${num2}`;
-  const rightAnsmer = String(getResult(num1, num2, operatorRandom));
-  return [question, rightAnsmer];
+  const num1 = generateRandomNumber(0, 11);
+  const num2 = generateRandomNumber(0, 11);
+  const randomOperator = operands[generateRandomNumber(0, operands.length)];
+  const question = `${num1} ${randomOperator} ${num2}`;
+  const correctAnswer = String(calculateExpression(num1, num2, randomOperator));
+  return [question, correctAnswer];
 };
-const startCalcGame = () => engineGame(findResultOperation, task);
+const startCalcGame = () => gameEngine(findResultOperation, gameTask);
 export default startCalcGame;

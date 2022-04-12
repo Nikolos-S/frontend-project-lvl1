@@ -1,16 +1,16 @@
-import engineGame from '../index.js';
-import generatorRandom from '../randomNumber.js';
+import gameEngine from '../index.js';
+import generateRandomNumber from '../randomNumber.js';
 
-const task = 'Find the greatest common divisor of given numbers.';
+const gameTask = 'Find the greatest common divisor of given numbers.';
 
 const getGCD = (num1, num2) => (num1 !== 0 ? getGCD(num2 % num1, num1) : num2);
 
 const findLagrestDiv = () => {
-  const number1 = generatorRandom(2, 26);
-  const number2 = generatorRandom(2, 26);
+  const number1 = generateRandomNumber(2, 26);
+  const number2 = generateRandomNumber(2, 26);
   const question = `${number1} ${number2}`;
-  const rightAnsmer = String(getGCD(number1, number2));
-  return [question, rightAnsmer];
+  const correctAnswer = String(getGCD(number1, number2));
+  return [question, correctAnswer];
 };
-const startGcdGame = () => engineGame(findLagrestDiv, task);
+const startGcdGame = () => gameEngine(findLagrestDiv, gameTask);
 export default startGcdGame;

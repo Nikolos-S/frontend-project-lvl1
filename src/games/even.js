@@ -1,16 +1,15 @@
-import engineGame from '../index.js';
-import generatorRandom from '../randomNumber.js';
+import gameEngine from '../index.js';
+import generateRandomNumber from '../randomNumber.js';
 
-const task = 'Answer "yes" if the number is even, otherwise answer "no"';
+const gameTask = 'Answer "yes" if the number is even, otherwise answer "no"';
 
-const getEven = (number) => number % 2 === 0;
+const isEven = (number) => number % 2 === 0;
 
 const findEvenNumber = () => {
-  const randomNumber = generatorRandom(0, 100);
-  const question = randomNumber;
-  const rightAnsmer = getEven(randomNumber) ? 'yes' : 'no';
-  return [question, rightAnsmer];
+  const question = generateRandomNumber(0, 100);
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
+  return [question, correctAnswer];
 };
-const startEvenGame = () => engineGame(findEvenNumber, task);
+const startEvenGame = () => gameEngine(findEvenNumber, gameTask);
 
 export default startEvenGame;
