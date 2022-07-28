@@ -3,7 +3,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/4ecbacbd727b4617e5a2/maintainability)](https://codeclimate.com/github/Nikolos-S/frontend-project-lvl1/maintainability)
 [![run bug fix](https://github.com/Nikolos-S/frontend-project-lvl1/actions/workflows/nodejs.yml/badge.svg)](https://github.com/Nikolos-S/frontend-project-lvl1/actions/workflows/nodejs.yml)
 
-"brain games" - console games on JavaScript!
+"brain games" - console games on JavaScript!1
 
 game brain-even:
 <a href="https://asciinema.org/a/Wtri6kfVtuDByomF63dNtrIUv" target="_blank"><img src="https://asciinema.org/a/Wtri6kfVtuDByomF63dNtrIUv.svg" /></a>
